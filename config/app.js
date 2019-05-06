@@ -142,7 +142,7 @@ module.exports = {
     |--------------------------------------------------------------------------
     |
     | Set file extension fallbacks. When set, if a file is not found, the given
-    | extensions will be added to the file name and search for. The first
+    | extensions will be added to the file name and start for. The first
     | that exists will be served. Example: ['html', 'htm'].
     |
     */

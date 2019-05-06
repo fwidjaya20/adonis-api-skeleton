@@ -13,9 +13,10 @@
 |
 */
 
-const { Ignitor } = require('@adonisjs/ignitor')
+const AceIgnitor = require('./bootstrap/http');
 
-new Ignitor(require('@adonisjs/fold'))
-  .appRoot(__dirname)
-  .fireAce()
-  .catch(console.error)
+new AceIgnitor()
+    .appRoot(__dirname)
+    .appFile('./bootstrap/app.js')
+    .fireAce()
+    .catch(console.error);
