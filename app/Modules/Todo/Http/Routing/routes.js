@@ -7,7 +7,7 @@ const routes = [
     {
         url: '/',
         verbs: ['GET'],
-        action: 'index',
+        action: 'getAllTodos',
         middleware: null
     }
 ];

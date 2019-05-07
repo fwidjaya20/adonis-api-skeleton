@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
 /** @type {import('@adonisjs/framework/src/Env')} */
-const Env = use('Env')
+const Env = use('Env');
 
 /** @type {import('@adonisjs/ignitor/src/Helpers')} */
-const Helpers = use('Helpers')
+const Helpers = use('Helpers');
 
 module.exports = {
   /*
@@ -81,4 +81,4 @@ module.exports = {
     },
     debug: Env.get('DB_DEBUG', false)
   }
-}
+};
