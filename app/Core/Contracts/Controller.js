@@ -1,11 +1,26 @@
 'use strict';
 
 class Controller {
-    arrayResponse(response, statusCode = 200, data) {
+    dataResponse(response, statusCode = 200, data) {
         response
             .status(statusCode)
             .json({
                 data: data
+            });
+    }
+
+    paginateResponse(response, statusCode = 200, data) {
+        const { rows, pages } = data;
+
+        response
+            .status(statusCode)
+            .json({
+                data: rows,
+                metadata: {
+                    total: pages.total,
+                    limit: pages.perPage,
+                    lastPage: pages.lastPage
+                }
             });
     }
 

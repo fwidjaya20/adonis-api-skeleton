@@ -9,6 +9,24 @@ const routes = [
         verbs: ['GET'],
         action: 'getAllTodos',
         middleware: null
+    },
+    {
+        url: '/',
+        verbs: ['POST'],
+        action: 'createNewTodo',
+        middleware: null
+    },
+    {
+        url: '/:id',
+        verbs: ['PUT', 'PATCH'],
+        action: 'updateTodo',
+        middleware: null
+    },
+    {
+        url: '/:id',
+        verbs: ['DELETE'],
+        action: 'deleteTodo',
+        middleware: null
     }
 ];
 
