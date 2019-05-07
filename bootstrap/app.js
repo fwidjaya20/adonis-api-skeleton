@@ -58,7 +58,10 @@ const aliases = {
     Schema: 'Adonis/Src/Schema',
     View: 'Adonis/Src/View',
     Ws: 'Adonis/Addons/Ws',
-    Controller: 'App/Core/Http/Controller',
+    Controller: 'App/Core/Contracts/Controller',
+    Service: 'App/Core/Contracts/Service',
+    Repository: 'App/Core/Contracts/Repository',
+    BaseCommand: 'App/Core/Commands/Generators/BaseCommand'
 };
 
 /*
@@ -69,6 +72,8 @@ const aliases = {
 | Here you store ace commands for your package
 |
 */
-const commands = [];
+const commands = [
+    'App/Core/Commands/Generators/ModuleCommand',
+];
 
 module.exports = { providers, aceProviders, aliases, commands };

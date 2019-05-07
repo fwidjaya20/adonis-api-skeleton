@@ -1,0 +1,15 @@
+'use strict';
+
+const Controller = use('Controller');
+
+class {{name}} extends Controller {
+
+{{#methods}}
+    {{.}}({request, response}) {
+        //
+    }
+
+{{/methods}}
+}
+
+module.exports = {{name}};
