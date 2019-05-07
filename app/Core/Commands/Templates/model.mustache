@@ -5,6 +5,22 @@ const Model = use('Model');
 
 class {{name}} extends Model {
 
+    static get table() {
+        return '';
+    }
+
+    static get primaryKey() {
+        return 'id';
+    }
+
+    static get hidden() {
+        return [];
+    }
+
+    static get computed() {
+        return [];
+    }
+
 }
 
 module.exports = {{name}};

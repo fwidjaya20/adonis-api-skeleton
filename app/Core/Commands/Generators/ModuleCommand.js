@@ -122,7 +122,7 @@ class ModuleCommand extends BaseCommand {
 
         const template = 'repository';
         const templateOptions = {
-            name: `${moduleName}`
+            name: `${moduleName}Repository`
         };
 
         await this.write(template, model, templateOptions);
