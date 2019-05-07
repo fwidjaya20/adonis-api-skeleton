@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 /*
 |--------------------------------------------------------------------------
@@ -16,20 +16,20 @@ const providers = [
   '@adonisjs/bodyparser/providers/BodyParserProvider',
   '@adonisjs/cors/providers/CorsProvider',
   '@adonisjs/lucid/providers/LucidProvider'
-]
+];
 
 /*
 |--------------------------------------------------------------------------
 | Ace Providers
 |--------------------------------------------------------------------------
 |
-| Ace providers are required only when running ace commands. For example
+| Ace Providers are required only when running ace commands. For example
 | Providers for migrations, tests etc.
 |
 */
 const aceProviders = [
   '@adonisjs/lucid/providers/MigrationsProvider'
-]
+];
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +43,26 @@ const aceProviders = [
 |   { Route: 'Adonis/Src/Route' }
 |
 */
-const aliases = {}
+const aliases = {
+    Command: 'Adonis/Src/Command',
+    Config: 'Adonis/Src/Config',
+    Database: 'Adonis/Src/Database',
+    Env: 'Adonis/Src/Env',
+    Event: 'Adonis/Src/Event',
+    Factory: 'Adonis/Src/Factory',
+    Hash: 'Adonis/Src/Hash',
+    Helpers: 'Adonis/Src/Helpers',
+    Lucid: 'Adonis/Src/Lucid',
+    Middleware: 'Adonis/Src/Middleware',
+    Route: 'Adonis/Src/Route',
+    Schema: 'Adonis/Src/Schema',
+    View: 'Adonis/Src/View',
+    Ws: 'Adonis/Addons/Ws',
+    Controller: 'App/Core/Contracts/Controller',
+    Service: 'App/Core/Contracts/Service',
+    Repository: 'App/Core/Contracts/Repository',
+    BaseCommand: 'App/Core/Commands/Generators/BaseCommand'
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +72,8 @@ const aliases = {}
 | Here you store ace commands for your package
 |
 */
-const commands = []
+const commands = [
+    'App/Core/Commands/Generators/ModuleCommand',
+];
 
-module.exports = { providers, aceProviders, aliases, commands }
+module.exports = { providers, aceProviders, aliases, commands };
