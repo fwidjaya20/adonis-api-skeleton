@@ -1,7 +1,5 @@
 'use strict';
 
-const Helpers = use('Helpers');
-const Ioc = require('@adonisjs/fold').Ioc;
 const Route = use('Route');
 
 class Router {
