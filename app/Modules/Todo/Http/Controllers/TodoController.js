@@ -2,18 +2,19 @@
 
 const Controller = use('Controller');
 
-/**
- * Here you can use your Domain Layer or using your RPC/REST for integrate into your other services
- */
+const TodoRepo = use('App/Domains/Todo/Repositories/TodoRepository');
 
 class TodoController extends Controller {
-    index({request, response}) {
-        response
-            .status(200)
-            .json({
-                message: 'Successfully Access Todo Controller'
+
+    async getAllTodos({request, response}) {
+        const todos = await new TodoRepo().fetchTodos()
+            .catch((error) => {
+                this.errorResponse(response, 500, error.stack);
             });
+
+        this.arrayResponse(response, 200, todos);
     }
+
 }
 
 module.exports = TodoController;
