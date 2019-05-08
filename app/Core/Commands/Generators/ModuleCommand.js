@@ -22,7 +22,7 @@ class ModuleCommand extends BaseCommand {
      * @public
      */
     static get description () {
-        return 'Create a new DDD Module'
+        return 'Create a new Module'
     }
 
     /**
@@ -35,7 +35,6 @@ class ModuleCommand extends BaseCommand {
      */
     async handle(args, options) {
         const modulePath = Helpers.appRoot(`app/Modules/${args.name}`);
-        const domainPath = Helpers.appRoot(`app/Domains/${args.name}`);
 
         await this.createModules(args.name)
             .then(() => {
@@ -45,15 +44,6 @@ class ModuleCommand extends BaseCommand {
                 console.log(`${this.icon('error')} Failed to generate ${args.name} Module`);
                 console.error(error.stack);
             });
-
-        await this.createDomains(args.name)
-            .then(() => {
-                console.log(`${this.icon('success')} ${args.name} Module is generated on '${domainPath}'`);
-            })
-            .catch((error) => {
-                console.log(`${this.icon('error')} Failed to generate ${args.name} Domain`);
-                console.error(error.stack);
-            });
     }
 
     async createModules(moduleName) {
@@ -61,12 +51,6 @@ class ModuleCommand extends BaseCommand {
         await this.createRouting(moduleName);
         await this.createResource(moduleName);
         await this.createService(moduleName);
-    }
-
-    async createDomains(domainName) {
-        await this.createModel(domainName);
-        await this.createRepository(domainName);
-        await this.createValidator(domainName);
     }
 
     async createController(moduleName) {
@@ -104,34 +88,6 @@ class ModuleCommand extends BaseCommand {
         };
 
         await this.write(template, service, templateOptions);
-    }
-
-    async createModel(moduleName) {
-        const model = Helpers.appRoot(`app/Domains/${moduleName}/Models/${moduleName}.js`);
-
-        const template = 'model';
-        const templateOptions = {
-            name: `${moduleName}`
-        };
-
-        await this.write(template, model, templateOptions);
-    }
-
-    async createRepository(moduleName) {
-        const model = Helpers.appRoot(`app/Domains/${moduleName}/Repositories/${moduleName}Repository.js`);
-
-        const template = 'repository';
-        const templateOptions = {
-            name: `${moduleName}Repository`
-        };
-
-        await this.write(template, model, templateOptions);
-    }
-
-    async createValidator(moduleName) {
-        const validator = Helpers.appRoot(`app/Domains/${moduleName}/Validators/.gitkeep`);
-
-        await this.writeFile(validator, '', {});
     }
 
 }

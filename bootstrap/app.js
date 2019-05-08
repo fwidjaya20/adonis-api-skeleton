@@ -74,6 +74,7 @@ const aliases = {
 */
 const commands = [
     'App/Core/Commands/Generators/ModuleCommand',
+    'App/Core/Commands/Generators/DomainCommand',
 ];
 
 module.exports = { providers, aceProviders, aliases, commands };
