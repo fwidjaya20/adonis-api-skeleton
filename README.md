@@ -14,7 +14,9 @@ The major changes were made in the ``app`` folder, so the files in ``bootstrap (
 
 This boilerplate uses a [DDD based architecture](https://domainlanguage.com/ddd/reference/), so the main folder will be working with: ``Domains`` and ``Modules`` folders.
 
-``Domains`` and ``Modules`` directory is automatically created when you run ``adonis make:module [MODULE_NAME]``.
+``Domains`` and ``Modules`` directory is automatically created when you run:
+* ``adonis make:module [MODULE_NAME]`` this command will generate the ``module``.
+* ``adonis make:domain [DOMAIN_NAME]`` this command will generate the ``domain``.
 
 
 ## Project Structure
